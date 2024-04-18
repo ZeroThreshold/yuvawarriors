@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "LightPath",
+    "title": "Yuva Warriors",
     "base_url": "/",
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "48",
-    "logo_text": "LightPath"
+    "logo_text": "Yuva Warriors"
   },
 
   "settings": {
@@ -17,15 +17,15 @@
 
   "nav_button": {
     "enable": true,
-    "label": "Take survey",
+    "label": "Explore Careers!",
     "link": "/contact"
   },
 
   "params": {
     "contact_form_action": "",
     "tag_manager_id": "",
-    "footer_content": "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristique eget amet, tempus eu at cttur.",
-    "copyright": "copyright © 2024 LightPath"
+    "footer_content": "Empowering Tomorrow's Innovators",
+    "copyright": "copyright © 2024 Yuva Warriors"
   },
 
   "metadata": {

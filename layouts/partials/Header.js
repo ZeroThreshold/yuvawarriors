@@ -18,13 +18,14 @@ const Header = () => {
   // logo source
   const { logo } = config.site;
   const { enable, label, link } = config.nav_button;
+  const { title } = config.site
 
   return (
     <header className="header">
       <nav className="navbar container">
         {/* logo */}
         <div className="order-0">
-          <span className="text-3xl font-bold text-black">LightPath</span>
+          <span className="text-3xl font-bold text-black">{title}</span>
         </div>
 
         {/* navbar toggler */}

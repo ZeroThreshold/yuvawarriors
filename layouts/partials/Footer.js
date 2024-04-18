@@ -9,6 +9,7 @@ import Link from "next/link";
 const Footer = () => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
+  const { title } = config.site
   return (
     <footer className="section bg-theme-light pb-0">
       <div className="container">
@@ -33,12 +34,11 @@ const Footer = () => {
           {/* social icons */}
           <div className="md-12 sm:col-6 lg:col-3">
             <Link href="/" aria-label="Bigspring">
-              <Image
-                src={config.site.logo}
-                width={config.site.logo_width}
-                height={config.site.logo_height}
-                alt=""
-              />
+              <div className="order-0">
+                <span className="text-2xl font-bold text-black">
+                {title}
+                </span>
+              </div>
             </Link>
             {markdownify(footer_content, "p", "mt-3 mb-6")}
             <Social source={social} className="social-icons mb-8" />
