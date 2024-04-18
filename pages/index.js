@@ -1,6 +1,5 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
-import Cta from "@layouts/components/Cta";
 import { markdownify } from "@lib/utils/textConverter";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,7 +32,7 @@ const Home = ({ frontmatter }) => {
               )}
               <Link
                 className="btn btn-primary z-0 py-[14px] my-5"
-                href={"/"}
+                href={"/yuvamanthan"}
                 rel=""
               >
                 Find Your Career Path Today!
@@ -108,7 +107,7 @@ const Home = ({ frontmatter }) => {
                     {/* Slides */}
                     {service?.images.map((slide, index) => (
                       <SwiperSlide key={index}>
-                        <Image src={slide} alt="" width={600} height={500} />
+                        <Image src={slide} alt="" width={400} height={300} />
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -145,10 +144,10 @@ const Home = ({ frontmatter }) => {
       })}
 
       {/* workflow */}
-      <section className="section bg-theme-light">
+      <section className="section">
         <div className="container">
           <div className="text-center">
-            <h2>{markdownify(feature.title)}</h2>
+            <h2>{markdownify(testimonial.title)}</h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {testimonial.people.map((item, i) => (
