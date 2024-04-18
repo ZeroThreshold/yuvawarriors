@@ -18,7 +18,7 @@
   "nav_button": {
     "enable": true,
     "label": "Explore Careers!",
-    "link": "/contact"
+    "link": "/yuvamanthan"
   },
 
   "params": {
@@ -29,8 +29,8 @@
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Zerothreshold Labs",
     "meta_image": "",
-    "meta_description": "A SAAS template for nextjs"
+    "meta_description": "A platform for young minds to explore and learn about various career options."
   }
 }
