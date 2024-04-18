@@ -5,6 +5,10 @@
       "url": "/"
     },
     {
+      "name": "Blogs",
+      "url": "/blogs"
+    },
+    {
       "name": "Contact",
       "url": "/contact"
     },
