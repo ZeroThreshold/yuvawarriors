@@ -1,6 +1,6 @@
-import Logo from "@components/Logo";
 import config from "@config/config.json";
 import menu from "@config/menu.json";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -18,15 +18,24 @@ const Header = () => {
   // logo source
   const { logo } = config.site;
   const { enable, label, link } = config.nav_button;
-  const { title } = config.site
+  const { title } = config.site;
 
   return (
-    <header className="header">
+    <header className="header shadow-lg border-b-neutral-100 sticky">
       <nav className="navbar container">
         {/* logo */}
-        <div className="order-0">
-          <span className="text-3xl font-bold text-black">{title}</span>
-        </div>
+        <Link href={`/`} className="order-0 flex items-center gap-3">
+          <Image
+            src={"/images/logo_upscaled.png"}
+            alt="logo"
+            width={50}
+            height={50}
+          />
+          <span className="text-2xl font-[1000] text-black mt-1">
+            <span className="text-amber-500">Yuva</span>
+            <span className="text-primary">Warriors</span>
+          </span>
+        </Link>
 
         {/* navbar toggler */}
         <button
@@ -61,7 +70,7 @@ const Header = () => {
             {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>
                 {menu.hasChildren ? (
-                  <li className="nav-item nav-dropdown group relative">
+                  <li className="group relative">
                     <span className="nav-link inline-flex items-center">
                       {menu.name}
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
@@ -70,11 +79,8 @@ const Header = () => {
                     </span>
                     <ul className="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
                       {menu.children.map((child, i) => (
-                        <li className="nav-dropdown-item" key={`children-${i}`}>
-                          <Link
-                            href={child.url}
-                            className="nav-dropdown-link block"
-                          >
+                        <li className="navlistitem" key={`children-${i}`}>
+                          <Link href={child.url} className="block">
                             {child.name}
                           </Link>
                         </li>

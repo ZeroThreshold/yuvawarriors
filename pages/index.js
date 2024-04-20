@@ -7,6 +7,8 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
+import Wave from "@layouts/components/Wave";
+import { is, tr } from "date-fns/locale";
 
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, testimonial, call_to_action } =
@@ -15,7 +17,7 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title}>
-      <section className="section pb-[50px]">
+      <section className="section pb-[50px] bg-theme-light">
         <div className="container">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">
@@ -81,65 +83,74 @@ const Home = ({ frontmatter }) => {
         </div>
       </section>
 
+      <Wave />
+
       {/* services */}
       {services.map((service, index) => {
         const isOdd = index % 2 > 0;
+        const isEven = (index + 1) % 2 === 0;
         return (
-          <section
-            key={`service-${index}`}
-            className={`section ${isOdd && "bg-theme-light"}`}
-          >
-            <div className="container">
-              <div className="items-center gap-8 md:grid md:grid-cols-2">
-                {/* Carousel */}
-                <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
-                  <Swiper
-                    modules={[Autoplay, Pagination]}
-                    pagination={
-                      service.images.length > 1 ? { clickable: true } : false
-                    }
-                    autoplay={{
-                      delay: 5000,
-                      disableOnInteraction: false,
-                    }}
-                    init={service?.images > 1 ? false : true}
-                  >
-                    {/* Slides */}
-                    {service?.images.map((slide, index) => (
-                      <SwiperSlide key={index}>
-                        <Image src={slide} alt="" width={400} height={300} />
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-
-                {/* Content */}
-                <div
-                  className={`service-content mt-5 md:mt-0 ${
-                    !isOdd && "md:order-1"
-                  }`}
-                >
-                  <h2 className="font-bold leading-[40px]">{service?.title}</h2>
-                  <p className="mt-4 mb-2">{service?.content}</p>
-                  {service.button.enable && (
-                    <Link
-                      href={service?.button.link}
-                      className="cta-link inline-flex items-center text-primary"
+          <>
+            {isEven && <Wave rotate={false} />}
+            <section
+              key={`service-${index}`}
+              className={`section ${isOdd && "bg-theme-light"}`}
+            >
+              <div className="container">
+                <div className="items-center gap-8 md:grid md:grid-cols-2">
+                  {/* Carousel */}
+                  <div className={`service-carousel ${!isOdd && "md:order-2"}`}>
+                    <Swiper
+                      modules={[Autoplay, Pagination]}
+                      pagination={
+                        service.images.length > 1 ? { clickable: true } : false
+                      }
+                      autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
+                      }}
+                      init={service?.images > 1 ? false : true}
                     >
-                      {service?.button.label}
-                      <Image
-                        className="ml-1"
-                        src="/images/arrow-right.svg"
-                        width={18}
-                        height={14}
-                        alt="arrow"
-                      />
-                    </Link>
-                  )}
+                      {/* Slides */}
+                      {service?.images.map((slide, index) => (
+                        <SwiperSlide key={index}>
+                          <Image src={slide} alt="" width={400} height={300} />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    className={`service-content mt-5 md:mt-0 ${
+                      !isOdd && "md:order-1"
+                    }`}
+                  >
+                    <h2 className="font-bold md:text-5xl leading-[40px]">
+                      {service?.title}
+                    </h2>
+                    <p className="mt-4 mb-2">{service?.content}</p>
+                    {service.button.enable && (
+                      <Link
+                        href={service?.button.link}
+                        className="cta-link inline-flex items-center text-primary"
+                      >
+                        {service?.button.label}
+                        <Image
+                          className="ml-1"
+                          src="/images/arrow-right.svg"
+                          width={18}
+                          height={14}
+                          alt="arrow"
+                        />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+            {isOdd && <Wave rotate={true} />}
+          </>
         );
       })}
 
