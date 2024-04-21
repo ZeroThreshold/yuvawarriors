@@ -1,0 +1,64 @@
+ul.ks-cboxtags {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+ul.ks-cboxtags li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+  color: #fff;
+  background-color: #12bbd4;
+  border-color: #1bdbf8;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+  border-color: #03d7f8;
+}
+
+ul.ks-cboxtags li label {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(71, 70, 70, 0.3);
+  border-radius: 25px;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+ul.ks-cboxtags li label::before {
+  content: url("../public/images/plus.svg");
+  font-weight: 900;
+  font-size: 12px;
+  padding-right: 6px;
+  padding-top: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+  content: url("../public/images/check.svg");
+  transform: rotate(-360deg);
+}
+
+@media screen and (max-width: 600px) {
+  ul.ks-cboxtags {
+    padding: 10px;
+  }
+  ul.ks-cboxtags li label {
+    padding: 6px 8px;
+  }
+}

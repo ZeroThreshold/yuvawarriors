@@ -62,9 +62,9 @@ const DisplayQuestions = () => {
                     <h3 className="text-2xl font-bold mb-4">
                       {questionItem.question}
                     </h3>
-                    <div>
+                    <ul className="ks-cboxtags">
                       {questionItem.options.map((option, k) => (
-                        <div key={k}>
+                        <li key={k}>
                           <input
                             type="checkbox"
                             id={option}
@@ -73,17 +73,17 @@ const DisplayQuestions = () => {
                             onClick={(e) =>
                               handleCheckboxChange(e, question.box)
                             }
-                            className="form-checkbox text-primary-500 focus:ring-primary-500 rounded"
                           />
                           <label
                             htmlFor={option}
-                            className="text-gray-700 ml-4"
+                            for={option}
+                            className="text-gray-700"
                           >
                             {option}
                           </label>
-                        </div>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ))}
                 <div className="flex gap-4 w-full">
