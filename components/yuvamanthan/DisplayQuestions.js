@@ -12,7 +12,7 @@ const DisplayQuestions = () => {
     results,
     setShowResults,
     showResults,
-    setstartGame
+    setstartGame,
   } = useZustandStore();
   const [answers, setAnswers] = useState({});
 
@@ -57,23 +57,23 @@ const DisplayQuestions = () => {
   return (
     <div>
       <div className="my-5 ">
-        
         {!showResults &&
           questions.map((question, i) => {
             if (i !== questionNumber) return null;
             return (
               <div key={i}>
-              <div className="bg-white p-2">
-                <div className="flex items-center bg-gray-100 p-4 rounded">
-              <div className="w-4 h-4 rounded-full bg-primary mr-2"></div>
-              <p className="whitespace-nowrap text-gray-800">
-                Directions: Tick the items in each box that best describe you. You may make as many or as few ticks in each box as you choose.
-              </p>
-            </div>
-            </div>
+                <div className="bg-white p-2">
+                  <div className="flex items-center bg-gray-100 p-4 rounded ">
+                    <div className="w-4 h-4 rounded-full bg-primary mr-2 hidden md:block"></div>
+                    <p className=" text-gray-800">
+                      Directions: Tick the items in each box that best describe
+                      you. You may make as many or as few ticks in each box as
+                      you choose.
+                    </p>
+                  </div>
+                </div>
                 {question.questionList.map((questionItem, j) => (
                   <div key={j} className="bg-white shadow p-6">
-                    
                     <h3 className="text-2xl font-bold mb-4">
                       {questionItem.question}
                     </h3>
@@ -104,7 +104,9 @@ const DisplayQuestions = () => {
                 <div className="flex gap-4 w-full">
                   <button
                     className={`btn btn-primary mt-10`}
-                    onClick=  {questionNumber == 0 ? handleExitClick : () => decrease(1)} 
+                    onClick={
+                      questionNumber == 0 ? handleExitClick : () => decrease(1)
+                    }
                   >
                     Back
                   </button>
@@ -116,17 +118,18 @@ const DisplayQuestions = () => {
                   >
                     Next
                   </button>
-                          {!showResults && (
-          <div
-            className={`mt-10 ${questionNumber == 15 ? "block" : "hidden"}`}
-          >
-            <button className="btn btn-primary" onClick={onSubmit}>
-              Submit
-            </button>
-          </div>
-        )}
+                  {!showResults && (
+                    <div
+                      className={`mt-10 ${
+                        questionNumber == 15 ? "block" : "hidden"
+                      }`}
+                    >
+                      <button className="btn btn-primary" onClick={onSubmit}>
+                        Submit
+                      </button>
+                    </div>
+                  )}
                 </div>
-
               </div>
             );
           })}
