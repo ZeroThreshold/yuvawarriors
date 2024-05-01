@@ -1,9 +1,9 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
-import DisplayQuestions from "components/yuvamanthan/DisplayQuestions";
+import DisplayQuestions from "components/legAssessment/DisplayQuestions";
 import { useZustandStore } from "@hooks/useStore";
 
-const YuvaManthan = () => {
+const YuvaManthanLeg = () => {
   const { title } = config.site;
   const { showResults } = useZustandStore();
 
@@ -49,4 +49,4 @@ const YuvaManthan = () => {
   );
 };
 
-export default YuvaManthan;
+export default YuvaManthanLeg;
