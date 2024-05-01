@@ -52,7 +52,6 @@ const DisplayQuestions = () => {
   const handleExitClick = () => {
     // Go back to the previous page
     setstartGame(false);
-    console.log("setting");
   };
   return (
     <div>
@@ -133,7 +132,6 @@ const DisplayQuestions = () => {
               </div>
             );
           })}
-        {showResults && <ShowSurveyResults results={results} />}
       </div>
     </div>
   );

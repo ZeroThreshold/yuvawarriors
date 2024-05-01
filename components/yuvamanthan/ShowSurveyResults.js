@@ -1,7 +1,9 @@
 import { careerOptions } from "data/careersOptions";
 import Image from "next/image";
+import Link from "next/link";
 
 const ShowSurveyResults = ({ results }) => {
+  console.log(results);
   const sortedResults = results.slice(0, 3);
   const topThree = sortedResults.map((result) => {
     const careerCluster = careerOptions.find(
@@ -15,42 +17,31 @@ const ShowSurveyResults = ({ results }) => {
       count: result.count,
     };
   });
+
   return (
-    <>
-      {topThree.map((result, index) => (
-        <section
-          key={`service-${index}`}
-          className={`section ${index % 2 === 1 ? "bg-theme-light" : ""}`}
-        >
-          <div className="container">
-            <div className="items-center gap-8 md:grid md:grid-cols-2">
-              {/* Carousel */}
-              <div
-                className={`service-carousel ${
-                  index % 2 === 0 ? "md:order-2" : ""
-                }`}
-              >
-                <Image
-                  src={result.img}
-                  alt={result.count}
-                  width={600}
-                  height={500}
-                />
-              </div>
-              {/* Content */}
-              <div
-                className={`service-content mt-5 md:mt-0 ${
-                  index % 2 === 0 ? "md:order-1" : ""
-                }`}
-              >
-                <h2 className="font-bold leading-[40px]">{result.name}</h2>
-                <p className="mt-4 mb-2">{result.description}</p>
+    <div className="h-full flex flex-col">
+      <div className="flex justify-center text-white mb-10 md:mb-0 text-5xl font-extrabold items-centers px-10">
+        These are your top 3 career interests!
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-evenly gap-10 md:gap-0">
+        {topThree.map((result, index) => (
+          <div key={index} className="bg-white p-6 rounded shadow-lg">
+            <div class="max-w-sm rounded overflow-hidden ">
+              <Image src={result.img} alt={result.count} />
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{result.name}</div>
+                <p class="text-gray-700 text-base">{result.description}</p>
               </div>
             </div>
           </div>
-        </section>
-      ))}
-    </>
+        ))}
+      </div>
+      <div className="flex justify-center text-white  mt-10 md:mt-0">
+        <Link href="/" className="bg-primary px-6 py-2 rounded-full">
+          Exit
+        </Link>
+      </div>
+    </div>
   );
 };
 

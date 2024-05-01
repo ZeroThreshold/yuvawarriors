@@ -1,11 +1,9 @@
-import config from "@config/config.json";
-import Base from "@layouts/Baseof";
 import DisplayQuestions from "components/yuvamanthan/DisplayQuestions";
 import { useZustandStore } from "@hooks/useStore";
 import GameBase from "@layouts/Gameof";
 import ShimmerButton from "components/magicui/shimmer-button";
-import BorderBeam from "components/magicui/border-beam";
 import Link from "next/link";
+import ShowSurveyResults from "components/yuvamanthan/ShowSurveyResults";
 
 const StartPage = () => {
   const { setstartGame } = useZustandStore();
@@ -41,20 +39,21 @@ const StartPage = () => {
 };
 
 const YuvaManthan = () => {
-  const { showResults, startGame } = useZustandStore();
+  const { showResults, startGame, results } = useZustandStore();
   return (
     <GameBase>
       <section
         className={`section md:bg-cover md:bg-no-repeat ${
           startGame ? "md:h-screen" : "h-screen"
-        } bg-[url('../public/images/background.png')]`}
+        }  bg-[url('../public/images/background.png')]`}
       >
         {!startGame && <StartPage />}
-        {startGame && !showResults && (
+        {startGame && (
           <div className="px-3 md:px-10">
             <DisplayQuestions />
           </div>
         )}
+        {showResults && <ShowSurveyResults results={results} />}
       </section>
     </GameBase>
   );
