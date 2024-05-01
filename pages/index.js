@@ -9,6 +9,24 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 import Wave from "@layouts/components/Wave";
 import { is, tr } from "date-fns/locale";
+import Marquee from "components/magicui/marquee";
+import { cn } from "lib/utils/utils";
+
+const ReviewCard = ({ name, position, body, icon }) => {
+  return (
+    <figure className="relative mx-4 flex max-w-md flex-col rounded-lg bg-white p-6 shadow-md">
+      <div className="flex items-center">
+        <div>
+          <figcaption className="text-lg font-semibold text-gray-800">
+            {name}
+          </figcaption>
+          <p className="text-sm text-gray-600">{position}</p>
+        </div>
+      </div>
+      <blockquote className="mt-4 italic text-gray-800">{body}</blockquote>
+    </figure>
+  );
+};
 
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, testimonial, call_to_action } =
@@ -17,7 +35,7 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title}>
-    
+
       <section className="section pb-[50px] bg-theme-light" >
         <div className="container">
           <div className="row text-center">
@@ -157,43 +175,26 @@ const Home = ({ frontmatter }) => {
 
       {/* workflow */}
       <section className="section">
-        <div className="container">
-          <div className="text-center">
-            <h2>{markdownify(testimonial.title)}</h2>
-          </div>
-          <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-            {testimonial.people.map((item, i) => (
-              <div
-                className="testimonial-card rounded-xl bg-white p-6 pb-8 text-center shadow-lg"
-                key={`testimonial-${i}`}
-              >
-                {item.profileImage && (
-                  <Image
-                    className="mx-auto rounded-full"
-                    src={item.profileImage}
-                    width={50}
-                    height={50}
-                    alt={`${item.name} profile image`}
-                  />
-                )}
-                <div className="mt-4">
-                  {item.icon && (
-                    <Image
-                      className="mx-auto"
-                      src={item.icon}
-                      width={30}
-                      height={30}
-                      alt="Testimonial icon"
-                    />
-                  )}
-                  <p className="mt-3 italic text-gray-700">{item.content}</p>
-                  <h6 className="mt-3 text-lg font-semibold">{item.name}</h6>
-                  <p className="text-sm text-gray-500">{item.position}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+ {/* Testimonial */}
+ <div>
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            {markdownify(testimonial.title)}
+          </h2>
         </div>
+        <div>
+          <Marquee pauseOnHover className="[--duration:30s]">
+            {testimonial.people.map((item, i) => (
+              <ReviewCard
+                key={`testimonial-${i}`}
+                name={item.name}
+                position={item.position}
+                body={item.content}
+              />
+            ))}
+          </Marquee>
+        </div>
+      </div>
       </section>
       {/* Cta */}
       {/* <Cta cta={call_to_action} /> */}
