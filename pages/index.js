@@ -17,7 +17,8 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title}>
-      <section className="section pb-[50px] bg-theme-light">
+    
+      <section className="section pb-[50px] bg-theme-light" >
         <div className="container">
           <div className="row text-center">
             <div className="mx-auto lg:col-10">

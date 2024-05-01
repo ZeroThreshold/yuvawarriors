@@ -12,4 +12,6 @@ export const useZustandStore = create((set) => ({
   setResults: (results) => set(() => ({ results })),
   showResults: false,
   setShowResults: (showResults) => set(() => ({ showResults })),
+  startGame: false,
+  setstartGame: (startGame) => set(() => ({ startGame })),
 }));
