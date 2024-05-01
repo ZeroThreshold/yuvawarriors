@@ -1,4 +1,3 @@
-import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import { toast } from "react-toastify";
 import { markdownify } from "@lib/utils/textConverter";
@@ -9,8 +8,6 @@ const ContactSchema = z.object({
   subject: z.string(),
   message: z.string().optional(),
 });
-
-const prisma = new PrismaClient();
 
 const Contact = ({ data }) => {
   const { frontmatter } = data;
