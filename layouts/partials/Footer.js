@@ -9,35 +9,22 @@ import Link from "next/link";
 const Footer = () => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
-  const { title } = config.site
+  const { title } = config.site;
   return (
     <footer className="section bg-theme-light pb-0">
       <div className="container">
         {/* footer menu */}
         <div className="row">
-          {footer.map((col) => {
-            return (
-              <div className="mb-12 sm:col-6 lg:col-3" key={col.name}>
-                {markdownify(col.name, "h2", "h4")}
-                <ul className="mt-6">
-                  {col?.menu.map((item) => (
-                    <li className="mb-1" key={item.text}>
-                      <Link href={item.url} rel="">
-                        {item.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-          {/* social icons */}
           <div className="md-12 sm:col-6 lg:col-3">
-            <Link href="/" aria-label="Bigspring">
+            <Link href="/" className="flex items-center gap-3">
+              <Image
+                src={"/images/logo_upscaled.png"}
+                alt="logo"
+                width={50}
+                height={50}
+              />
               <div className="order-0">
-                <span className="text-2xl font-bold text-black">
-                {title}
-                </span>
+                <span className="text-3xl font-bold text-black">{title}</span>
               </div>
             </Link>
             {markdownify(footer_content, "p", "mt-3 mb-6")}
