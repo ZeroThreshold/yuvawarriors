@@ -68,19 +68,22 @@ testimonial:
     - name: "Shyam Badahur"
       position: "12th Grade Student"
       icon: "/images/person.svg"
-      content: "The Career Interest Assessment provided invaluable insights into my strengths and passions, guiding me toward a fulfilling career path that aligns with my goals and talents."
+      content: "The Career Interest Assessment provided by Yuva Warriors was truly eye-opening. It helped me discover my true passions and strengths, guiding me toward a fulfilling career path that perfectly aligns with my goals and talents. I highly recommend this assessment to anyone seeking clarity and direction in their career journey."
+
     - name: "Krishna Sharma"
       position: "Aspiring Entrepreneur"
       icon: "/images/person.svg"
-      content: "The Entrepreneurship Bootcamps were a game-changer for me. The hands-on experience and expert guidance gave me the confidence and knowledge to launch and grow my own successful business."
+      content: "The Entrepreneurship Bootcamps offered by Yuva Warriors were a game-changer for me. The hands-on experience and expert guidance from seasoned entrepreneurs gave me the confidence and knowledge I needed to launch and grow my own successful business. I can't thank them enough for equipping me with the skills and mindset necessary for entrepreneurial success."
+
     - name: "Sarvesh Navare"
       position: "10th Grade Student"
       icon: "/images/person.svg"
-      content: "The Leadership Development program equipped me with practical strategies and skills that transformed my approach to leading others. It was a transformative experience that set me up for future success."
+      content: "The Leadership Development program at Yuva Warriors was truly transformative. It equipped me with practical strategies and skills that completely changed my approach to leading others. The program's focus on personal growth, communication, and team-building set me up for future success in any leadership role. I highly recommend this program to anyone looking to develop their leadership abilities."
+
     - name: "Madhav Shinde"
       position: "CEO, MindBright"
       icon: "/images/person.svg"
-      content: "Agriculture as a Business offered me a comprehensive understanding of managing agricultural enterprises. The program's innovative approach and expert insights enabled me to drive sustainable success in the industry."
+      content: "As a CEO in the agricultural sector, the 'Agriculture as a Business' program offered by Yuva Warriors provided me with a comprehensive understanding of managing agricultural enterprises. Their innovative approach and expert insights enabled me to drive sustainable success in the industry. I highly recommend this program to anyone looking to excel in the agribusiness field."
 # call_to_action
 # call_to_action:
 #   title: Ready to get started?
