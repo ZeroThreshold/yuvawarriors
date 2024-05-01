@@ -12,12 +12,12 @@ const Wave = ({ rotate = true }) => {
       <defs>
         <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
           <stop
-            stop-color="rgb(10, 168, 167)"
+            stopColor="rgb(10, 168, 167)"
             offset="0%"
             data-darkreader-inline-stopcolor=""
           ></stop>
           <stop
-            stop-color="rgb(50, 268, 100)"
+            stopColor="rgb(50, 268, 100)"
             offset="100%"
             data-darkreader-inline-stopcolor=""
           ></stop>
@@ -30,12 +30,12 @@ const Wave = ({ rotate = true }) => {
       <defs>
         <linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0">
           <stop
-            stop-color="rgb(237, 246, 245)"
+            stopColor="rgb(237, 246, 245)"
             offset="0%"
             data-darkreader-inline-stopcolor=""
           ></stop>
           <stop
-            stop-color="rgb(237, 246, 245)"
+            stopColor="rgb(237, 246, 245)"
             offset="100%"
             data-darkreader-inline-stopcolor=""
           ></stop>
