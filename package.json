@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "5.13.0",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
     "marked": "^4.2.4",
@@ -22,9 +23,11 @@
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.7.1",
     "react-lite-youtube-embed": "^2.3.52",
+    "react-toastify": "^10.0.5",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "swiper": "^8.4.5",
+    "zod": "^3.23.5",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
@@ -39,6 +42,7 @@
     "postcss": "^8.4.19",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
+    "prisma": "^5.13.0",
     "sass": "^1.56.2",
     "sharp": "^0.31.2",
     "tailwind-bootstrap-grid": "^5.0.1",
